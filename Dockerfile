@@ -21,7 +21,7 @@ RUN mv gifsicle/linux/gifsicle-debian6 /usr/local/bin/gifsicle
 WORKDIR /usr/src/app
 
 # Install application
-COPY package*.json ./
+COPY package-lock.json ./
 RUN npm install
 
 # Bundle app source
