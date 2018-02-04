@@ -2,12 +2,14 @@
 
 set -e
 
-# Spin docker compose
+# TODO: get rid of sleep commands
 
-# Tell localstack to create S3 bucket
-aws --endpoint-url=http://localhost:4572 s3 mb s3://test-bucket
-aws --endpoint-url=http://localhost:4572 s3 ls
+docker-compose build
 
-#
+docker-compose run aws & sleep 10
 
-exit 1
+docker-compose run aws-init & sleep 10
+
+docker-compose run scrifeo npm start & sleep 10
+
+docker-compose rm -f -s

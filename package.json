@@ -11,6 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
-    "gifify": "^2.4.1"
+    "gifify": "^2.4.1",
+    "s3-stream-upload": "^2.0.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.188.0"
   }
 }

@@ -1,13 +1,13 @@
 FROM ubuntu
 
-RUN pip install awscli
+RUN apt-get update
+RUN apt-get install -y python-pip
 
-ENV AWS_ACCESS_KEY_ID=test
-ENV AWS_SECRET_ACCESS_KEY=test
+RUN pip install awscli
 
 WORKDIR /usr/src/app
 
 COPY . .
 
 ENTRYPOINT []
-CMD ["fixtures/scripts/setup.sh"]
+CMD ["scripts/setup.sh"]
